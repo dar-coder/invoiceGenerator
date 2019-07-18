@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Customers
+{% endblock %}
+
+{% block main %}
+    <link href="/static/styles.css" rel="stylesheet"/>
+
+    <div class="border">
+        <h4>Add New Customer</h4>
+        <form id="customers" action="/customers" name="customers" method="post">
+            <div class="form-group">
+                <input autocomplete="on" autofocus class="form-control" name="customer" id="customer" placeholder="*Company/Full Name" type="text"/>
+                <input autocomplete="on" class="form-control" name="address" id="address" placeholder="*Address" type="text"/>
+                <div id="customer_error" style="color: red"></div>
+            </div>
+            <div class="form-group">
+                <input autocomplete="on" class="form-control" name="city" id="city" placeholder="*City/Town" type="text"/>
+                <input autocomplete="on" class="form-control" name="country" id="country" placeholder="*Country/State" type="text"/>
+                <div id="location_error" style="color: red"></div>
+            </div>
+            <button class="btn button-green" type="submit">Add Customer</button>
+        </form>
+    </div>
+    <br>
+    <div class="border">
+        <table class="table">
+            <tr>
+                <th style="font-weight: bold">Customer</th>
+                <th style="font-weight: bold">Address</th>
+                <th style="font-weight: bold">City/Town</th>
+                <th style="font-weight: bold">Country/State</th>
+            </tr>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.customer }}</td>
+                <td>{{ customer.address }}</td>
+                <td>{{ customer.city }}</td>
+                <td>{{ customer.country }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    <script src="static/customers.js"></script>
+{% endblock %}

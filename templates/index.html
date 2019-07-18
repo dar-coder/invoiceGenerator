@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div>
+      <h1 class="greeting">Hello, {{ name }}!</h1>
+    </div>
+
+    <div>
+      <form action="/create" method="get">
+        <button class="create-invoice">Create Invoice</button>
+      </form>
+      <form action="/customers" method="get">
+        <button button class="customer-list">Customer List</button>
+      </form>
+    </div>
+
+    <div>
+      <form action="/items" method="get">
+        <button class="item-list">Item List</button>
+      </form>
+      <form action="/invoices" method="get">
+        <button class="invoice-list">Invoice List</button>
+      </form>
+    </div>
+
+{% endblock %}

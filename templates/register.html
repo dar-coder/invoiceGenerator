@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <link href="/static/styles.css" rel="stylesheet"/>
+
+
+    <form id="register" action="/register" name="register" method="post">
+        <div class="form-group">
+            <input autocomplete="on" autofocus class="form-control" name="company" id="company" placeholder="*Company name" type="text"/>
+            <input autocomplete="on" class="form-control" name="address" id="address" placeholder="*Company Address" type="text"/>
+            <div id="company_error"></div><div id="address_error"></div>
+        </div>
+        <div class="form-group">
+            <input autocomplete="on" class="form-control" name="city" id="city" placeholder="*City/Town" type="text"/>
+            <input autocomplete="on" class="form-control" name="country" id="country" placeholder="*Country/State" type="text"/>
+            <div id="city_error"></div><div id="country_error"></div>
+        </div>
+        <div class="form-group">
+            <input autocomplete="on" class="form-control" name="ceofirst" id="ceofirst" placeholder="*CEO's First Name" type="text"/>
+            <input autocomplete="on" class="form-control" name="ceolast" id="ceolast" placeholder="*CEO's Last Name" type="text"/>
+            <div id="ceofirst_error"></div><div id="ceolast_error"></div>
+        </div>
+        <br>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="username" id="username" placeholder="*Username" type="text"/>
+            <div id="username_error"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="*Password" type="password"/>
+            <div id="password_error"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="*Confirm password" type="password"/>
+            <div id="confirmation_error"></div>
+        </div>
+        <button class="btn button-green" type="submit">Register</button>
+    </form>
+    <script src="static/register.js"></script>
+{% endblock %}
